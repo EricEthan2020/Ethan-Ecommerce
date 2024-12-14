@@ -16,7 +16,7 @@ const ProductCard = ({
   return (
     <div className='bg-slate-50 p-4 mt-5 flex flex-col gap-3 items-start' >
       <img src={image} className=' h-40' alt="" />
-      <p className='font-bold line-clamp-2'>{title}</p>
+      <p className='font-bold line-clamp-2 text-blue-500'>{title}</p>
       <div className='flex mt-auto'>
     {stars}
       </div>
