@@ -4,34 +4,20 @@ import products from '../data/Products';
 
 const ProductDetail = () => {
     const { productId } = useParams();
-    const [currencyRate, setCurrencyRate] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-    // Fetch the currency conversion rate (MMK)
-    useEffect(() => {
-        const fetchCurrencyRate = async () => {
-            try {
-                const response = await fetch('https://api.currencyfreaks.com/latest?base=USD');
-                const data = await response.json();
-                setCurrencyRate(data.rates.MMK); // Assuming 'MMK' is part of the response
-            } catch (error) {
-                console.error('Error fetching currency rate:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchCurrencyRate();
-    }, []);
-
-    // Find the product based on productId
     const currentProduct = products.find((product) => product.id === parseInt(productId));
+    const currentRate = currentProduct.rating.rate.toFixed(0);
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+        stars.push(
+            <svg key={i} className={` mt-auto size-6 stroke-blue-500 ${i <= currentRate ? "  fill-yellow-300" : ""} stroke-blue-500 fill-yellow-300"`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+            </svg>
 
+        )
+    }
     if (!currentProduct) {
         return <p>Product not found</p>;
     }
-
-    const convertedPrice = currencyRate ? (currentProduct.price * currencyRate).toFixed(2) : 'Loading...';
-
     return (
         <div className='p-10 m-5 gap-5 lg:m-10 flex items-center bg-slate-50 rounded-xl'>
             {/* Product Images */}
@@ -56,10 +42,12 @@ const ProductDetail = () => {
                 <div className=''>
                     <p className='lg:text-2xl text-center text-xs  bg-slate-200 p-3 w-fit rounded-md text-blue-500 font-bold'>{currentProduct.category}</p>
                 </div>
-
+                <p className='flex'>
+                    {stars}
+                </p>
                 <p className='lg:text-2xl lg:text-left sm:text-sm text-xs lg:w-[50%]'>{currentProduct.description}</p>
                 <p className='font-semibold text-lg'>
-                    {loading ? 'Loading price...' : `${convertedPrice} MMK`}
+                    {(currentProduct.price)*7000}MMK
                 </p>
             </div>
         </div>
