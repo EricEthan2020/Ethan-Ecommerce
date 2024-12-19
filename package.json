@@ -29,5 +29,18 @@
     "react-router-dom": "^7.0.2",
     "tailwindcss": "^3.4.16",
     "vite": "^6.0.1"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricEthan2020/Ethan-Ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EricEthan2020/Ethan-Ecommerce/issues"
+  },
+  "homepage": "https://github.com/EricEthan2020/Ethan-Ecommerce#readme"
 }
