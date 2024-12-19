@@ -1,20 +1,12 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Layout from './Layout'
-import Blogs from './Blogs'
-
+import CategorySection from '../component/CategorySection'
+import ProductSection from '../component/ProductSection'
 const Home = () => {
   return (
-    <div>
-      <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Layout/>}>
-        <Route index element={<Home/>}/>
-        <Route path='blogs' element={<Blogs/>}/>
-        </Route>
-      </Routes>
-      </BrowserRouter>
-    </div>
+    <>
+    <CategorySection/>
+    <ProductSection/>
+    </>
   )
 }
 

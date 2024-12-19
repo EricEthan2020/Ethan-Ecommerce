@@ -1,8 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({
 
-  product: { title, price, image, rating: { rate } } }) => {
+  product: { 
+    id,
+    title,
+     price,
+      image, 
+      rating: { rate } 
+    } }) => {
   const currentRate = rate.toFixed(0);
     const stars = [];
   for (let i = 1; i <= 5; i++) {
@@ -14,7 +21,7 @@ const ProductCard = ({
    )
   }
   return (
-    <div className='bg-slate-50 p-4 mt-5 flex flex-col gap-3 items-start' >
+    <Link to={`/product-detail/${id}`} className='bg-slate-50 p-4 mt-5 flex flex-col gap-3 items-start' >
       <img src={image} className=' h-40' alt="" />
       <p className='font-bold line-clamp-2 text-blue-500'>{title}</p>
       <div className='flex mt-auto'>
@@ -30,7 +37,7 @@ const ProductCard = ({
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
