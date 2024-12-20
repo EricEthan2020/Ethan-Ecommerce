@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Breadcrumbs = ({ currentProduct }) => {
-    console.log('Breadcrumbs currentProduct:', currentProduct);  // Debugging line
+const Breadcrumbs = ({ currentPagetitle }) => {
+    console.log('Breadcrumbs currentProduct:', currentPagetitle);  // Debugging line
 
-    if (!currentProduct) {
+    if (!currentPagetitle) {
         return null; // Return null or render a fallback UI if currentProduct is missing
     }
 
     return (
-        <nav className="flex" aria-label="Breadcrumb">
+        <nav className="flex bg-slate-400 rounded-lg p-3 sticky top-24" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li className="inline-flex items-center">
                     <a href={"/"} className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
@@ -24,7 +24,7 @@ const Breadcrumbs = ({ currentProduct }) => {
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
                         </svg>
                         <a href="#" className="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">
-                            {currentProduct.category}
+                            {currentPagetitle.category}
                         </a>
                     </div>
                 </li>
@@ -34,7 +34,7 @@ const Breadcrumbs = ({ currentProduct }) => {
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
                         </svg>
                         <span className="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">
-                            {currentProduct.title}
+                            {currentPagetitle.title}
                         </span>
                     </div>
                 </li>
