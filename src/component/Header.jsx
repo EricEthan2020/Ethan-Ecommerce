@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div className="p-4 md:p-5 flex justify-between items-center bg-slate-100 shadow-md">
+    <div className=" fixed w-full top-0 p-4 md:p-5 flex justify-between items-center bg-slate-100 shadow-md">
       <Link to="/" className="font-bold text-2xl lg:text-4xl md:text-3xl sm:text-2xl text-blue-500 uppercase">
         Ethan Ecommerce
       </Link>

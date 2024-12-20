@@ -4,7 +4,7 @@ const MyCart = () => {
   return (
     <>
     <div className='py-32 m-5'>
-   
+    
     </div>
     </>
   )

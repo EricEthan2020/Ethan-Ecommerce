@@ -23,11 +23,11 @@ const ProductCard = ({
   }
 
   return (
-    <Link to={`/product-detail/${id}`} className="bg-slate-50 p-4 mt-5 flex flex-col gap-3 items-start">
-     <div className="w-full justify-center flex">
+    <div  className="bg-slate-50 p-4 mt-5 flex flex-col gap-3 items-start">
+     <Link to={`/product-detail/${id}`} className="w-full justify-center flex">
      <img src={image} className="h-40  object-cover" alt="" />
-     </div>
-      <p className="font-bold line-clamp-2 text-blue-500">{title}</p>
+     </Link>
+      <Link to={`/product-detail/${id}`} className="font-bold line-clamp-2 text-blue-500">{title}</Link>
       <div className="flex mt-auto">{stars}</div>
       <div className="flex justify-between w-full mt-auto items-center text-center">
         <p className="sm:ms-0 text-center items-center">{price * 3350} MMK</p>
@@ -39,7 +39,7 @@ const ProductCard = ({
           </button>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

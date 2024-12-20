@@ -12,7 +12,7 @@ const CategorySection = () => {
     ];
   return (
    <>
-       <div id="category-section" className='p-5'>
+       <div id="category-section" className='p-5 mt-20'>
         <p className="text-2xl font-semibold mb-4 text-blue-500">{title}</p>
         <div className='flex overflow-auto hideScroll'>
         <CategoryButton current={true} categorykey="all"/>
