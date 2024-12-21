@@ -7,13 +7,13 @@ const Cart = ({ Cart }) => {
         <img src={Cart.product.image} className="h-16" alt={Cart.product.title} />
       </div>
       <div className=' col-span-3'>
-        <p className=' mb-2'>{Cart.product.title}</p>
+        <p className=' mb-2 text-sm'>{Cart.product.title}</p>
         <p className='text-sm text-gray-500'>Price : {Cart.product.price}</p>
       </div>
       <div className='colspan-1'>
         {Cart.quantity}
       </div>
-      <div className='colspan-1 text-end text-2xl font-bold'>
+      <div className='colspan-1 text-end lg:text-2xl sm:text-sm text-md font-bold text-yellow-300'>
         <p>{Cart.cost}</p>
       </div>
     </div>
