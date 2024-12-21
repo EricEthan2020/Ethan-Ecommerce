@@ -4,7 +4,7 @@ const Cart = ({ Cart }) => {
   return (
     <div className='p-5 lg:p-10 lg:mt-5 mt-3 border border-black grid grid-cols-6 text-left items-center gap-5'>
       <div className=' col-span-1'>
-        <img src={Cart.product.image} className="h-20 w-20" alt={Cart.product.title} />
+        <img src={Cart.product.image} className=" aspect-auto" alt={Cart.product.title} />
       </div>
       <div className=' col-span-3'>
         <p className=' mb-2'>{Cart.product.title}</p>
