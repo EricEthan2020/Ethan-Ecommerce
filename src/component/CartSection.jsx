@@ -20,9 +20,11 @@ const CartSection = () => {
   ]
   return (
     <>
-      {carts.map((cart) => (
+    <div className='flex flex-col gap-3'>
+    {carts.map((cart) => (
         <Cart key={cart.id} Cart={cart} />
       ))}
+    </div>
     </>
   );
 }
