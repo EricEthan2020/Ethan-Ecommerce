@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 const Cart = ({ Cart }) => {
   return (
-  <div className='mb-5 grid grid-cols-12 text-cente justify-center border border-black rounded-lg p-3'>
-<div className=' col-span-3 p-2'>
+  <div className='mb-5 gap-5 items-center grid grid-cols-12 text-cente justify-center border border-black rounded-lg p-3'>
+<div className=' col-span-3'>
     <img className='w-20' src={Cart.product.image} alt="" />
 </div>
 <div className=' col-span-3 text-lg flex justify-center items-center'>
-      <p className=' line-clamp-2'>{Cart.product.title}</p>
+      <p className=' line-clamp-2 text-left text-xs font-semibold'>{Cart.product.title}</p>
 </div>
 <div className='col-span-3 flex flex-col justify-center items-center'>
   <p className='flex justify-center items-center mt-3'>Quantity</p>
