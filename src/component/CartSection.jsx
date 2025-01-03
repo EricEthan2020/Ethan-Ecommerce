@@ -25,15 +25,16 @@ return (
       ))}
     </div>
     <div className='p-5 flex justify-end gap-3'>
-      <div className='flex flex-col gap-1 text-start'>
-        <p className='flex justify-between gap-5'>
-          Total Cost : <span>{total.toFixed(2)}</span>
+      <div className='flex flex-col gap-2 text-start'>
+        <p className='flex justify-between gap-4'>
+          Total Cost : <span className=
+          "font-bold ml-5 items-center text-center">{total.toFixed(2)}</span>
         </p>
         <p className='flex justify-between gap-5'>
-          Tax (10%) : <span className=" text-red-500">{tax.toFixed(2)}</span>
+          Tax (10%) : <span className=" font-bold text-red-500">{tax.toFixed(2)}</span>
         </p>
-        <p>
-          Net Total : <span className=" text-green-500 font-bold ml-5 items-center text-center">{netTotal.toFixed(2)}</span>
+        <p className="flex justify-between">
+          Net Total : <span className=" text-green-500 font-bold items-center text-center">{netTotal.toFixed(2)}</span>
         </p>
       </div>
     </div>
