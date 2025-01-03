@@ -1,11 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import products from '../data/Products';
 import Rating from '../component/Rating';
 import ProductNotFound from '../component/ProductNotFound';
 import Breadcrumbs from '../component/Breadcrumbs';
+import useProductStore from '../store/useProductStore';
 
 const ProductDetail = () => {
+  const {products} = useProductStore();
   const { productId } = useParams();
   const currentProduct = products.find((product) => product.id === parseInt(productId));
 

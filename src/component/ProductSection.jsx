@@ -1,9 +1,9 @@
 import React from 'react'
 import ProductCard from './ProductCard'
-import products from '../data/Products'
+import useProductStore from '../store/useProductStore'
 
 const ProductSection = () => {
-  
+  const {products} = useProductStore();
   return (
     <div className='p-5'>
         <p className=' text-blue-500 font-semibold'>Available Product lists</p>
