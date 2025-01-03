@@ -5,7 +5,7 @@ const Cart = ({ cart: { id, productId, quantity } }) => {
   const { products } = useProductStore();
   const product = products.find((el) => el.id === productId);
 
-  // If product is not found, handle gracefully
+  // Handle product not found
   if (!product) {
     return (
       <div className="border border-black p-5">
@@ -17,24 +17,29 @@ const Cart = ({ cart: { id, productId, quantity } }) => {
   const cost = product.price * quantity;
 
   return (
-    <div className="border border-black p-5 grid grid-cols-6">
-      <div className="col-span-1">
-        <img className='w-20 h-20' src={product.image} alt={product.title} />
+    <div className="border border-black p-4 flex flex-wrap items-center justify-between gap-4">
+      {/* Image Section */}
+      <div className="flex-shrink-0">
+        <img className="w-16 h-16 object-contain" src={product.image} alt={product.title} />
       </div>
-      <div className="col-span-3 flex flex-col gap-3">
-        <p className=' line-clamp-2 font-bold'>{product.title}</p>
-        <p className="text-gray-500">Price ({product.price})</p>
+
+      {/* Product Details */}
+      <div className="flex-1 min-w-[150px]">
+        <p className="font-bold text-sm sm:text-base line-clamp-2">{product.title}</p>
+        <p className="text-gray-500 text-sm">Price: ${product.price.toFixed(2)}</p>
       </div>
-      <div className="col-span-1">
-        <p className="mb-2 font-bold justify-center items-center">Quantity</p>
-        <div className="flex gap-3">
-          <button className="bg-blue-500 text-white px-3 py-2 rounded-lg">-</button>
-          {quantity}
-          <button className="bg-blue-500 text-white px-3 py-2 rounded-lg">+</button>
-        </div>
+
+      {/* Quantity Controls */}
+      <div className="flex items-center gap-2">
+        <p className="font-bold text-sm">Qty :</p>
+        <button className="bg-blue-500 text-white px-3 py-1 rounded-md">-</button>
+        <span className="text-sm">{quantity}</span>
+        <button className="bg-blue-500 text-white px-3 py-1 rounded-md">+</button>
       </div>
-      <div className="col-span-1 flex justify-center items-center ml-4">
-        <p className="text-end text-md font-bold text-yellow-300 mt-3">{cost}</p>
+
+      {/* Total Cost */}
+      <div className="flex-shrink-0 text-yellow-400 font-bold text-sm sm:text-base">
+        ${cost.toFixed(2)}
       </div>
     </div>
   );
